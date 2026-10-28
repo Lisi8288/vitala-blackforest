@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Über mich – VITALA Blackforest</title>
+  <meta name="description" content="Patrick von VITALA Blackforest: Mein Weg von der äußeren Welt zur inneren Wahrheit und zur Astrologie nach der PEA-Methode.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/sonne.svg" type="image/svg+xml">
+
+  <script>
+    // Einfacher Passwortschutz für die Testfassung (kein echter Zugriffsschutz)
+    (function () {
+      var ok = false;
+      try { ok = sessionStorage.getItem('vitala-test') === '1'; } catch (e) {}
+      if (!ok) document.documentElement.classList.add('locked');
+    })();
+  </script>
+  <style>
+    html.locked body > *:not(#gate) { display: none !important; }
+    #gate { display: none; }
+    html.locked #gate {
+      display: flex; min-height: 100vh; align-items: center; justify-content: center;
+      padding: 24px; text-align: center; background: var(--bg);
+    }
+    #gate form { max-width: 360px; width: 100%; }
+    #gate .logo { justify-content: center; margin-bottom: 2.4rem; }
+    #gate p { color: var(--ink-soft); margin-bottom: 1.6rem; }
+    #gate input { text-align: center; }
+    #gate .fehler { color: #a14b3a; font-size: 0.85rem; margin-top: 1rem; min-height: 1.2em; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div id="gate">
+    <form>
+      <div class="logo"><span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span><span class="logo-text"><span class="logo-main">VITALA</span><span class="logo-sub">Blackforest</span></span></div>
+      <p>Vorschau der neuen Website. Bitte gib das Passwort ein.</p>
+      <label for="gate-pw" class="sr-only">Passwort</label>
+      <input id="gate-pw" type="password" autocomplete="off" placeholder="Passwort">
+      <button type="submit" class="btn">Ansehen</button>
+      <p class="fehler" aria-live="polite"></p>
+    </form>
+  </div>
+  <script>
+    document.querySelector('#gate form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (document.getElementById('gate-pw').value.trim().toLowerCase() === 'vitala') {
+        try { sessionStorage.setItem('vitala-test', '1'); } catch (err) {}
+        document.documentElement.classList.remove('locked');
+      } else {
+        document.querySelector('#gate .fehler').textContent = 'Das Passwort stimmt leider nicht.';
+      }
+    });
+  </script>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Hauptnavigation">
+      <a href="index.html" class="logo" aria-label="VITALA Blackforest – Startseite">
+        <span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span>
+        <span class="logo-text">
+          <span class="logo-main">VITALA</span>
+          <span class="logo-sub">Blackforest</span>
+        </span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menü</button>
+      <ul class="menu" id="menu">
+        <li><a href="astrologie.html">Astrologie</a></li>
+        <li><a href="wellanalyse.html">WELL-Analyse</a></li>
+        <li><a href="zellgesundheit.html">Zellgesundheit</a></li>
+        <li><a href="ueber-mich.html" aria-current="page">Über mich</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li class="menu-cta"><a href="termin.html">Termin buchen</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Über mich</span>
+        <h1>Mein Weg von der äußeren Welt zur inneren Wahrheit</h1>
+        <p>Ich bin Patrick, 41 Jahre alt, und hätte früher gesagt, dass es nur das gibt, was man sehen, anfassen und messen kann.</p>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap split">
+        <div class="portrait-placeholder">Foto Patrick</div>
+        <div>
+          <p>Mein Leben spielte sich in der klassischen „3D-Welt“ ab. Funktionieren, leisten, Ziele erreichen. Ich glaubte, dass Erfolg, Logik und harte Arbeit die Antworten auf die wichtigsten Fragen des Lebens sind.</p>
+          <p>Doch dann kamen mehrere Schicksalsschläge.</p>
+          <p>Ereignisse, die mich aus meiner vertrauten Realität herausgerissen haben. Situationen, für die es keine logischen Erklärungen gab und bei denen mir kein noch so guter Plan helfen konnte. Zum ersten Mal begann ich, die Fragen zu stellen, denen ich zuvor aus dem Weg gegangen war:</p>
+          <p class="lead" style="margin-top:2rem">Wer bin ich wirklich? Warum passieren bestimmte Dinge in meinem Leben? Und gibt es mehr als das, was wir mit unseren Augen sehen können?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap narrow">
+        <p>Diese Fragen führten mich auf eine Reise zu mir selbst.</p>
+        <p>Dabei entdeckte ich eine Welt, die ich früher nie für möglich gehalten hätte. Eine Welt, in der Energie, Bewusstsein und innere Entwicklung eine zentrale Rolle spielen. Manche nennen sie die 4D-Welt. Für mich war es vor allem eine neue Sicht auf das Leben.</p>
+
+        <h2>Die Astrologie als Spiegel</h2>
+        <p>Ein wichtiger Schlüssel auf diesem Weg war die Astrologie. Nicht die Astrologie der Horoskope aus Zeitschriften, sondern die Astrologie nach der PEA-Methode. Sie zeigte mir, dass mein Geburtshoroskop kein festgeschriebenes Schicksal ist, sondern ein Spiegel meiner Persönlichkeit.</p>
+        <p>Zum ersten Mal verstand ich, warum ich in bestimmten Situationen so reagiere, welche Talente in mir angelegt sind, welche Bedürfnisse mich antreiben und welche Herausforderungen immer wieder in mein Leben kommen.</p>
+        <p>Ich begann zu erkennen, wie mein Energiekörper funktioniert und weshalb manche Dinge mir Kraft geben, während andere mich Energie kosten. Mir wurde bewusst, wie oft ich versucht hatte, Erwartungen anderer zu erfüllen, anstatt meinem eigenen Weg zu folgen.</p>
+        <p>Je mehr ich mich selbst verstand, desto mehr veränderte sich mein Leben. Nicht, weil sich die Welt um mich herum verändert hat. Sondern weil ich begonnen habe, mich selbst klarer zu sehen.</p>
+
+        <h2>Was ich heute tue</h2>
+        <p>Heute begleite ich Menschen dabei, genau diesen Zugang zu sich selbst zu finden.</p>
+        <p>Die Astrologie nach der PEA-Methode hilft dir dabei, deine Stärken, Potenziale und inneren Muster sichtbar zu machen. Sie kann dir Klarheit schenken, wenn du vor wichtigen Entscheidungen stehst, Orientierung geben, wenn du dich verloren fühlst, und dir zeigen, welche Fähigkeiten bereits in dir angelegt sind.</p>
+      </div>
+    </section>
+
+    <section class="center soft">
+      <div class="wrap narrow">
+        <div class="ornament"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.57 3.78L38.02 8.68M15.32 7.38L39.64 19.09M13.29 10.60L27.36 21.82M10.60 13.29L29.93 37.53M7.38 15.32L16.92 35.14M3.78 16.57L9.79 42.90M0.00 17.00L0.00 35.00M-3.78 16.57L-10.68 46.80M-7.38 15.32L-16.92 35.14M-10.60 13.29L-27.43 34.40M-13.29 10.60L-27.36 21.82M-15.32 7.38L-43.25 20.83M-16.57 3.78L-38.02 8.68M-17.00 0.00L-44.00 0.00M-16.57 -3.78L-34.12 -7.79M-15.32 -7.38L-43.25 -20.83M-13.29 -10.60L-30.49 -24.32M-10.60 -13.29L-27.43 -34.40M-7.38 -15.32L-15.19 -31.53M-3.78 -16.57L-10.68 -46.80M-0.00 -17.00L-0.00 -39.00M3.78 -16.57L9.79 -42.90M7.38 -15.32L15.19 -31.53M10.60 -13.29L29.93 -37.53M13.29 -10.60L30.49 -24.32M15.32 -7.38L39.64 -19.09M16.57 -3.78L34.12 -7.79" stroke-width="2.2"/><circle r="12" stroke-width="4.5"/></svg></div>
+        <p class="muted" style="margin-bottom:1.4rem">Denn ich bin überzeugt:</p>
+        <p class="lead">Du musst nicht werden, was andere von dir erwarten.<br>Du darfst entdecken, wer du <em>wirklich</em> bist.</p>
+      </div>
+    </section>
+
+    <div class="page-image" style="background-image:url('assets/img/lichtstrahlen.jpg'); aspect-ratio:3.2 / 1; background-position:center 40%" role="img" aria-label="Sonnenstrahlen fallen durch einen nebligen Wald"></div>
+
+    <section class="cta">
+      <div class="wrap narrow">
+        <div class="ornament"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.57 3.78L38.02 8.68M15.32 7.38L39.64 19.09M13.29 10.60L27.36 21.82M10.60 13.29L29.93 37.53M7.38 15.32L16.92 35.14M3.78 16.57L9.79 42.90M0.00 17.00L0.00 35.00M-3.78 16.57L-10.68 46.80M-7.38 15.32L-16.92 35.14M-10.60 13.29L-27.43 34.40M-13.29 10.60L-27.36 21.82M-15.32 7.38L-43.25 20.83M-16.57 3.78L-38.02 8.68M-17.00 0.00L-44.00 0.00M-16.57 -3.78L-34.12 -7.79M-15.32 -7.38L-43.25 -20.83M-13.29 -10.60L-30.49 -24.32M-10.60 -13.29L-27.43 -34.40M-7.38 -15.32L-15.19 -31.53M-3.78 -16.57L-10.68 -46.80M-0.00 -17.00L-0.00 -39.00M3.78 -16.57L9.79 -42.90M7.38 -15.32L15.19 -31.53M10.60 -13.29L29.93 -37.53M13.29 -10.60L30.49 -24.32M15.32 -7.38L39.64 -19.09M16.57 -3.78L34.12 -7.79" stroke-width="2.2"/><circle r="12" stroke-width="4.5"/></svg></div>
+        <h2>Die wichtigsten Antworten liegen bereits in dir.</h2>
+        <p>Manchmal braucht es nur den richtigen Spiegel, um sie zu erkennen.</p>
+        <div class="cta-buttons">
+          <a href="termin.html" class="btn">Termin buchen</a>
+        </div>
+        <p class="cta-alt"><a href="kontakt.html" class="link-gold">Lieber schreiben</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a href="index.html" class="logo logo-small">
+          <span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span>
+          <span class="logo-text">
+            <span class="logo-main">VITALA</span>
+            <span class="logo-sub">Blackforest</span>
+          </span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+          </div>
+  </footer>
+
+  <script>
+    var t = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
+    t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+      t.textContent = open ? 'Schließen' : 'Menü';
+    });
+  </script>
+</body>
+</html>
