@@ -416,6 +416,10 @@ section { padding: 130px 0; }
 .content { padding: 110px 0; }
 .content h2 { margin: 3.2rem 0 1.2rem; font-size: 2rem; }
 .content h2:first-child { margin-top: 0; }
+/* Foto im Fließtext */
+.content-figure { margin: 2.4rem 0; }
+.content-figure img { width: 100%; height: auto; mix-blend-mode: multiply; } /* weißer Fotohintergrund geht in Creme über */
+
 /* Einleitung im Fließtext: Textschrift, etwas größer – klar unter den Zwischenüberschriften */
 .content .lead {
   font-family: var(--sans);
