@@ -68,8 +68,8 @@
       <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menü</button>
       <ul class="menu" id="menu">
         <li><a href="index.html" aria-current="page">Home</a></li>
-        <li class="has-sub"><a href="index.html#angebote">Angebote</a>
-          <ul class="submenu"><li><a href="astrologie.html">Astrologie</a></li><li><a href="vitalanalyse.html">Vitalanalyse</a></li><li><a href="zellgesundheit.html">Zellgesundheit</a></li></ul></li>
+        <li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu">Angebote</button>
+          <ul class="submenu" id="submenu"><li><a href="astrologie.html">Astrologie</a></li><li><a href="vitalanalyse.html">Vitalanalyse</a></li><li><a href="zellgesundheit.html">Zellgesundheit</a></li></ul></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
         <li class="menu-cta"><a href="termin.html">Termin buchen</a></li>
       </ul>
@@ -207,6 +207,12 @@
       t.setAttribute('aria-expanded', open);
       t.textContent = open ? 'Schließen' : 'Menü';
     });
+    // „Angebote“: Klick öffnet/schließt das Untermenü, Klick daneben oder Esc schließt es
+    var st = document.querySelector('.sub-toggle'), sl = st.parentNode;
+    function setSub(open) { sl.classList.toggle('open', open); st.setAttribute('aria-expanded', open); }
+    st.addEventListener('click', function () { setSub(!sl.classList.contains('open')); });
+    document.addEventListener('click', function (e) { if (!sl.contains(e.target)) setSub(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setSub(false); });
     // nach Tippen auf einen Menüpunkt wieder schließen (wichtig für Sprünge innerhalb der Seite)
     m.addEventListener('click', function (e) {
       if (e.target.closest('a')) { m.classList.remove('open'); t.setAttribute('aria-expanded', false); t.textContent = 'Menü'; }

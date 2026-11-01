@@ -143,7 +143,20 @@ h1, h2, h3, .page-head p, .cta p, .lead { text-wrap: balance; }
 
 /* Untermenü „Angebote“: klappt beim Darüberfahren oder per Tastatur auf, ohne Animation */
 .menu .has-sub { position: relative; }
-.menu .has-sub > a::after {
+.sub-toggle {
+  padding: 6px 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sub-toggle:hover { border-bottom-color: var(--gold); }
+.sub-toggle::after {
   content: "";
   display: inline-block;
   width: 5px;
@@ -153,7 +166,8 @@ h1, h2, h3, .page-head p, .cta p, .lead { text-wrap: balance; }
   border-bottom: 1px solid currentColor;
   transform: translateY(-3px) rotate(45deg);
 }
-.menu .has-sub.is-active > a { border-bottom-color: var(--gold); }
+.menu .has-sub.is-active > .sub-toggle { border-bottom-color: var(--gold); }
+.has-sub.open .sub-toggle::after { transform: translateY(1px) rotate(225deg); }
 .submenu {
   display: none;
   position: absolute;
@@ -168,8 +182,10 @@ h1, h2, h3, .page-head p, .cta p, .lead { text-wrap: balance; }
 }
 /* unsichtbare Brücke, damit das Menü beim Hinüberfahren nicht zuklappt */
 .submenu::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
-.menu .has-sub:hover .submenu,
-.menu .has-sub:focus-within .submenu { display: block; }
+.menu .has-sub.open .submenu { display: block; }
+@media (hover: hover) and (min-width: 901px) {
+  .menu .has-sub:hover .submenu { display: block; }
+}
 .submenu li + li { margin-top: 4px; }
 .submenu a { display: block; padding: 8px 0; white-space: nowrap; }
 
@@ -623,9 +639,9 @@ form textarea:focus { outline: none; border-bottom-color: var(--gold); }
   .menu { align-items: stretch; }
   .menu a { display: block; padding: 16px 0; border: 0; }
   .menu .menu-cta a { display: inline-block; margin-top: 12px; padding: 12px 22px; border: 1px solid var(--gold); }
-  /* Handy: Angebote immer sichtbar und eingerückt */
-  .menu .has-sub > a::after { display: none; }
-  .submenu { display: block; position: static; min-width: 0; padding: 0 0 10px 18px; border: 0; box-shadow: none; background: none; }
+  /* Handy: Angebote klappen beim Antippen eingerückt auf */
+  .sub-toggle { display: block; width: 100%; padding: 16px 0; text-align: left; border: 0; }
+  .submenu { position: static; min-width: 0; padding: 0 0 10px 18px; border: 0; box-shadow: none; background: none; }
   .submenu::before { display: none; }
   .submenu li { border-bottom: 0; }
   .submenu a { padding: 8px 0; font-size: 0.78rem; color: var(--ink-soft); }
