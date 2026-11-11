@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VITALA Blackforest · Patrick Eberle</title>
+<meta name="description" content="Astrologie, Vitalanalyse und Zellgesundheit im Schwarzwald. Alle Angebote von Patrick Eberle auf einen Blick.">
+<meta name="theme-color" content="#1c2a21">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="VITALA Blackforest · Patrick Eberle">
+<meta property="og:description" content="Astrologie, Vitalanalyse und Zellgesundheit. Alle Angebote auf einen Blick.">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="icon" href="assets/sonne.svg" type="image/svg+xml">
+<style>
+:root {
+  --bg: #faf7f1; --bg-soft: #f3eee4; --ink: #2c2a26; --ink-soft: #6b665c;
+  --gold: #b0894f; --gold-l: #c9a465; --line: #e4dccd;
+  --green: #1c2a21; --green2: #24362a;
+  --serif: "Marcellus", Georgia, serif; --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, strong { font-family: var(--serif); font-weight: 400; }
+.page { max-width: 480px; margin: 0 auto; }
+.pad { padding: 0 20px; }
+
+/* Kopf: Waldgrün über dem Sonnenaufgang */
+.top { position: relative; color: #f3ead9; text-align: center; padding: 34px 20px 40px; overflow: hidden;
+  background: linear-gradient(180deg, rgba(28,42,33,.96) 0%, rgba(28,42,33,.55) 45%, rgba(28,42,33,.92) 100%),
+              url(assets/img/sonnenaufgang.jpg) center 40% / cover; }
+.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold-l); opacity: .7; }
+.logo { display: inline-flex; align-items: center; gap: 12px; }
+.logo svg { width: 50px; height: 50px; color: var(--gold-l); }
+.logo span { text-align: left; }
+.logo b { display: block; font-family: var(--serif); font-weight: 400; font-size: 26px; letter-spacing: .26em; line-height: 1; }
+.logo i { display: block; font-style: normal; font-size: 10.5px; letter-spacing: .42em; text-transform: uppercase; color: var(--gold-l); margin-top: 6px; }
+.who { font-size: 13px; letter-spacing: .08em; color: rgba(243,234,217,.78); margin-top: 18px; }
+h1 { font-size: clamp(30px, 8.6vw, 38px); line-height: 1.12; margin-top: 26px; color: #fff; text-wrap: balance; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 12px; height: 56px; margin-top: 26px;
+  background: var(--gold-l); color: var(--green); font-size: 12.5px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
+.btn svg { width: 18px; height: 18px; }
+.hint { font-size: 13px; color: rgba(243,234,217,.75); margin-top: 10px; }
+
+/* Abschnitte */
+.eyebrow { display: block; text-align: center; font-size: 10.5px; letter-spacing: .34em; text-transform: uppercase; color: var(--gold); margin: 46px 0 8px; }
+h2 { text-align: center; font-size: 28px; line-height: 1.15; text-wrap: balance; }
+.ornament { display: flex; justify-content: center; margin: 14px 0 0; }
+.ornament svg { width: 26px; height: 26px; color: var(--gold); }
+
+.offers { display: grid; gap: 14px; margin-top: 24px; }
+.offer { display: flex; align-items: stretch; background: #fff; border: 1px solid var(--line); }
+.offer img { flex: 0 0 96px; width: 96px; object-fit: cover; }
+.offer__body { flex: 1; min-width: 0; padding: 14px 6px 14px 16px; }
+.offer small { display: block; font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.offer strong { display: block; font-size: 22px; line-height: 1.15; margin-top: 3px; }
+.offer__body > span { display: block; font-size: 13px; line-height: 1.45; color: var(--ink-soft); margin-top: 5px; }
+.offer__go { flex: 0 0 44px; display: grid; place-items: center; color: var(--gold); }
+.offer__go svg { width: 18px; height: 18px; }
+
+.packages { margin-top: 14px; padding: 26px 20px; text-align: center; background: var(--green); color: #f3ead9; }
+.packages strong { display: block; font-size: 24px; line-height: 1.2; color: #fff; }
+.packages p { font-size: 14px; color: rgba(243,234,217,.8); margin-top: 8px; }
+.link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold-l); border-bottom: 1px solid rgba(201,164,101,.55); padding-bottom: 3px; }
+.link svg { width: 15px; height: 15px; }
+
+.me { display: flex; gap: 18px; align-items: center; margin-top: 24px; }
+.me img { flex: 0 0 112px; width: 112px; height: 140px; object-fit: cover; object-position: center 20%; }
+.me p { font-size: 14.5px; color: var(--ink-soft); }
+.me .link { color: var(--gold); border-color: var(--line); margin-top: 12px; }
+
+.contact { margin-top: 46px; padding: 28px 20px; text-align: center; background: var(--bg-soft); border-top: 1px solid var(--line); }
+.contact strong { display: block; font-size: 24px; }
+.contact p { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+.pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 16px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border: 1px solid var(--gold); font-size: 13px; }
+
+footer { text-align: center; padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); background: var(--green); color: rgba(243,234,217,.7); font-size: 12px; }
+footer svg { width: 30px; height: 30px; color: var(--gold-l); margin: 0 auto 12px; }
+footer nav a { margin: 0 8px; border-bottom: 1px solid rgba(201,164,101,.4); }
+.ph { background: #f6e7b8; color: var(--ink); padding: 1px 4px; }
+
+@media (min-width: 700px) {
+  body { background: var(--bg-soft); }
+  .page { background: var(--bg); box-shadow: 0 0 0 1px var(--line); }
+}
+</style>
+
+  <script>
+    // Einfacher Passwortschutz für die Testfassung (kein echter Zugriffsschutz)
+    (function () {
+      var ok = false;
+      try { ok = sessionStorage.getItem('vitala-test') === '1'; } catch (e) {}
+      if (!ok) document.documentElement.classList.add('locked');
+    })();
+  </script>
+  <style>
+    html.locked body > *:not(#gate) { display: none !important; }
+    #gate { display: none; }
+    html.locked #gate {
+      display: flex; min-height: 100vh; align-items: center; justify-content: center;
+      padding: 24px; text-align: center; background: var(--bg);
+    }
+    #gate form { max-width: 360px; width: 100%; }
+    #gate .logo { justify-content: center; margin-bottom: 2.4rem; }
+    #gate p { color: var(--ink-soft); margin-bottom: 1.6rem; }
+    #gate input { text-align: center; }
+    #gate .fehler { color: #a14b3a; font-size: 0.85rem; margin-top: 1rem; min-height: 1.2em; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div id="gate">
+    <form>
+      <div class="logo"><span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span><span class="logo-text"><span class="logo-main">VITALA</span><span class="logo-sub">Blackforest</span></span></div>
+      <p>Vorschau der neuen Website. Bitte gib das Passwort ein.</p>
+      <label for="gate-pw" class="sr-only">Passwort</label>
+      <input id="gate-pw" type="password" autocomplete="off" placeholder="Passwort">
+      <button type="submit" class="btn">Ansehen</button>
+      <p class="fehler" aria-live="polite"></p>
+    </form>
+  </div>
+  <script>
+    document.querySelector('#gate form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (document.getElementById('gate-pw').value.trim().toLowerCase() === 'vitala') {
+        try { sessionStorage.setItem('vitala-test', '1'); } catch (err) {}
+        document.documentElement.classList.remove('locked');
+      } else {
+        document.querySelector('#gate .fehler').textContent = 'Das Passwort stimmt leider nicht.';
+      }
+    });
+  </script>
+<div class="page">
+
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="VITALA Blackforest – zur Website">
+      <svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg>
+      <span><b>VITALA</b><i>Blackforest</i></span>
+    </a>
+    <p class="who">Patrick Eberle · Schwarzwald</p>
+    <h1>Komm in deine volle Kraft.</h1>
+    <a class="btn" href="termin.html">Kennenlernen buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="hint">15 Minuten. Wir schauen, welcher Weg zu dir passt.</p>
+  </header>
+
+  <main class="pad">
+    <span class="eyebrow">Drei Wege zu dir</span>
+    <h2>Was ich für dich tun kann</h2>
+    <div class="offers">
+      <a class="offer" href="astrologie.html">
+        <img src="assets/img/lichtstrahlen.jpg" alt="" loading="lazy">
+        <span class="offer__body">
+          <small>nach der PEA-Methode</small>
+          <strong>Astrologie</strong>
+          <span>Dein Geburtshoroskop als Landkarte: Wer bist du, was trägt dich, wohin zieht es dich?</span>
+        </span>
+        <span class="offer__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="offer" href="vitalanalyse.html">
+        <img src="assets/img/flussnebel.jpg" alt="" loading="lazy">
+        <span class="offer__body">
+          <small>Körper &amp; Seele</small>
+          <strong>Vitalanalyse</strong>
+          <span>Ein ganzheitlicher Blick auf dein Wohlbefinden: Körper, Gefühle und innere Balance.</span>
+        </span>
+        <span class="offer__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="offer" href="zellgesundheit.html">
+        <img src="assets/img/wasserfall.jpg" alt="" loading="lazy">
+        <span class="offer__body">
+          <small>Testen statt raten</small>
+          <strong>Zellgesundheit</strong>
+          <span>Dein Fettsäure-Profil schwarz auf weiß, mit Nährstoffen, die dazu passen.</span>
+        </span>
+        <span class="offer__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+
+    <div class="packages">
+      <strong>Drei Angebote, ein Paket.</strong>
+      <p>Astrologie, Vitalanalyse und Zellgesundheit zusammen.</p>
+      <a class="link" href="index.html#pakete">Pakete ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <span class="eyebrow">Über mich</span>
+    <h2>Hi, ich bin Patrick.</h2>
+    <div class="me">
+      <img src="assets/img/patrick.jpg" alt="Patrick Eberle" loading="lazy">
+      <div>
+        <p><span class="ph">1–2 Sätze von Patrick, z. B. wie er zur Astrologie und Vitalanalyse gekommen ist</span></p>
+        <a class="link" href="ueber-mich.html">Meine Geschichte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </main>
+
+  <section class="contact">
+    <strong>Lieber erst eine Frage?</strong>
+    <p>Schreib mir, ich melde mich bei dir.</p>
+    <div class="pills">
+      <span class="pill">WhatsApp <span class="ph">Nummer fehlt</span></span>
+      <span class="pill">E-Mail <span class="ph">Adresse fehlt</span></span>
+      <a class="pill" href="index.html">Website</a>
+    </div>
+  </section>
+
+  <footer>
+    <svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg>
+    <nav><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+  </footer>
+
+</div>
+</body>
+</html>

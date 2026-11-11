@@ -437,6 +437,13 @@ section { padding: 130px 0; }
 .content-figure { margin: 2.4rem 0; }
 .content-figure img { width: 100%; height: auto; mix-blend-mode: multiply; } /* weißer Fotohintergrund geht in Creme über */
 
+/* Zell-Bilder (Zellgesundheit): zwei nebeneinander, am Handy untereinander */
+.cells { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 2.4rem 0; }
+.cell img { width: 100%; height: auto; }
+.cell figcaption { margin-top: 1rem; text-align: center; color: var(--ink-soft); font-size: 0.92rem; }
+.cell figcaption strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.2rem; }
+@media (max-width: 560px) { .cells { grid-template-columns: 1fr; } }
+
 /* Einleitung im Fließtext: Textschrift, etwas größer – klar unter den Zwischenüberschriften */
 .content .lead {
   font-family: var(--sans);
