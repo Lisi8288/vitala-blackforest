@@ -378,6 +378,8 @@ section { padding: 130px 0; }
   border: 1px solid var(--gold-light);
 }
 .cta-duo h3 { margin: 0; }
+.cta-duo .eyebrow { margin-bottom: 0; }
+.cta-duo p { color: var(--ink-soft); margin: 0 0 6px; }
 .cta-duo .offer-by { margin-bottom: 6px; }
 .cta-duo .btn { margin-top: 0; min-width: 260px; }
 
