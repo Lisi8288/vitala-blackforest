@@ -494,6 +494,12 @@ section { padding: 130px 0; }
 .content-figure { margin: 2.4rem 0; }
 .content-figure img { width: 100%; height: auto; mix-blend-mode: multiply; } /* weißer Fotohintergrund geht in Creme über */
 
+/* Zellvergleich (Zellgesundheit): ein breites Bild mit kurzer Erklärung */
+.cell-compare { margin: 2.4rem 0; }
+.cell-compare img { width: 100%; height: auto; }
+.cell-compare figcaption { margin-top: 1rem; color: var(--ink-soft); font-size: 0.92rem; text-align: center; text-wrap: balance; }
+.cell-compare strong { color: var(--ink); font-weight: 500; }
+
 /* Zell-Bilder (Zellgesundheit): zwei nebeneinander, am Handy untereinander */
 .cells { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 2.4rem 0; }
 .cell img { width: 100%; height: auto; }
