@@ -497,8 +497,13 @@ section { padding: 130px 0; }
 /* Zellvergleich (Zellgesundheit): ein breites Bild mit kurzer Erklärung */
 .cell-compare { margin: 2.4rem 0; }
 .cell-compare img { width: 100%; height: auto; }
-.cell-compare figcaption { margin-top: 1rem; color: var(--ink-soft); font-size: 0.92rem; text-align: center; text-wrap: balance; }
-.cell-compare strong { color: var(--ink); font-weight: 500; }
+.cell-compare figcaption { margin-top: 1.2rem; color: var(--ink-soft); font-size: 0.92rem; text-align: center; }
+/* Beschriftung direkt unter der jeweiligen Zelle */
+.cell-labels { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.cell-labels p { margin: 0; text-wrap: balance; }
+.cell-labels strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.3rem; }
+.cell-note { margin-top: 1.4rem; font-style: normal; }
+@media (max-width: 560px) { .cell-labels { grid-template-columns: 1fr; gap: 16px; } }
 
 /* Zell-Bilder (Zellgesundheit): zwei nebeneinander, am Handy untereinander */
 .cells { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 2.4rem 0; }
