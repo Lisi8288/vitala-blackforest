@@ -349,6 +349,38 @@ section { padding: 130px 0; }
 .split-rev { grid-template-columns: 6fr 5fr; }
 .split-rev img { order: 2; }
 
+/* Über uns: eigener Kontakt je Person */
+.person-contact {
+  margin-top: 3.2rem;
+  padding: 40px 32px 34px;
+  border: 1px solid var(--gold-light);
+  background: var(--bg);
+  text-align: center;
+}
+.person-contact .eyebrow { margin-bottom: 0.8rem; }
+.person-contact p { color: var(--ink-soft); }
+.person-contact .cta-buttons { margin-top: 1.6rem; }
+
+/* Abschluss mit zwei Wegen (Patrick / Ursula) */
+.cta-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 860px;
+  margin: 2.6rem auto 0;
+}
+.cta-duo > div {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 12px;
+  padding: 36px 28px;
+  border: 1px solid var(--gold-light);
+}
+.cta-duo h3 { margin: 0; }
+.cta-duo .offer-by { margin-bottom: 6px; }
+.cta-duo .btn { margin-top: 0; min-width: 260px; }
+
 /* Kundenstimmen */
 .quotes { display: grid; gap: 24px; margin-top: 1.6rem; }
 .quotes blockquote { margin: 0; padding: 28px 32px; background: var(--bg-soft); border-left: 2px solid var(--gold-light); }
@@ -699,6 +731,8 @@ form textarea:focus { outline: none; border-bottom-color: var(--gold); }
   .split, .contact-grid, .booking { grid-template-columns: 1fr; }
   .split-rev img { order: 0; }
   .duo { grid-template-columns: 1fr; gap: 56px; }
+  .cta-duo { grid-template-columns: 1fr; }
+  .cta-duo .btn { min-width: 0; width: 100%; }
   .packages { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
   .offers { grid-template-columns: 1fr; }
   .offer { border-right: 0; border-bottom: 1px solid var(--line); }
