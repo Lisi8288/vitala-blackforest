@@ -302,7 +302,7 @@ section { padding: 130px 0; }
 /* Angebote auf der Startseite */
 .offers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--line);
   margin-top: 70px;
 }
@@ -329,6 +329,7 @@ section { padding: 130px 0; }
   flex: 1;
 }
 .offer:hover h3 { color: var(--gold); }
+.offers-4 { grid-template-columns: repeat(4, 1fr); }
 /* wer das Angebot anbietet */
 .offer-by {
   display: block;
@@ -693,9 +694,9 @@ form textarea:focus { outline: none; border-bottom-color: var(--gold); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
-  .offers { grid-template-columns: repeat(2, 1fr); }
-  .offer:nth-child(2n) { border-right: 0; }
-  .offer:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .offers-4 { grid-template-columns: repeat(2, 1fr); }
+  .offers-4 .offer:nth-child(2n) { border-right: 0; }
+  .offers-4 .offer:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .split, .contact-grid, .booking { gap: 56px; }
 }
 
