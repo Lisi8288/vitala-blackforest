@@ -446,12 +446,51 @@ section { padding: 130px 0; }
 .package-price { font-family: var(--serif); font-size: 1.6rem; margin-bottom: 0.4rem; }
 .package .btn { margin-top: 1.2rem; align-self: center; }
 /* Monatliche Begleitung: im Anschluss an Paket 1 oder 2 */
+.package-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.package-step::before,
+.package-step::after {
+  content: "";
+  width: 1px;
+  height: 34px;
+  background: var(--gold-light);
+}
+.package-step::after {
+  /* kleine Pfeilspitze nach unten */
+  height: 34px;
+  background: linear-gradient(var(--gold-light), var(--gold-light)) center top / 1px calc(100% - 6px) no-repeat;
+  position: relative;
+}
+.package-step span {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 10px 0;
+}
 .package-follow {
   max-width: 900px;
-  margin: 28px auto 0;
+  margin: 0 auto;
+  position: relative;
   background: var(--bg-soft);
 }
 .package-follow .list { align-self: center; flex: none; margin-bottom: 1rem; }
+.package-follow::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  background: transparent;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
 .package-note { font-size: 0.9rem; letter-spacing: 0.04em; color: var(--ink-soft); margin: 0; }
 
 /* Bildband: randlos über die ganze Breite, im Seitenverhältnis des Fotos (max. 85 % Bildschirmhöhe) */
