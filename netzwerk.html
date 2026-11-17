@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Netzwerk – VITALA Blackforest</title>
+  <meta name="description" content="Das Netzwerk von VITALA Blackforest: Menschen, mit denen Patrick zusammenarbeitet.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/sonne.svg" type="image/svg+xml">
+
+  <script>
+    // Einfacher Passwortschutz für die Testfassung (kein echter Zugriffsschutz)
+    (function () {
+      var ok = false;
+      try { ok = sessionStorage.getItem('vitala-test') === '1'; } catch (e) {}
+      if (!ok) document.documentElement.classList.add('locked');
+    })();
+  </script>
+  <style>
+    html.locked body > *:not(#gate) { display: none !important; }
+    #gate { display: none; }
+    html.locked #gate {
+      display: flex; min-height: 100vh; align-items: center; justify-content: center;
+      padding: 24px; text-align: center; background: var(--bg);
+    }
+    #gate form { max-width: 360px; width: 100%; }
+    #gate .logo { justify-content: center; margin-bottom: 2.4rem; }
+    #gate p { color: var(--ink-soft); margin-bottom: 1.6rem; }
+    #gate input { text-align: center; }
+    #gate .fehler { color: #a14b3a; font-size: 0.85rem; margin-top: 1rem; min-height: 1.2em; }
+    /* eigene Stile, damit die Sperre auch auf Seiten ohne style.css (links.html) gleich aussieht */
+    #gate { --g-bg: #faf7f1; --g-ink: #2c2a26; --g-soft: #6b665c; --g-gold: #b0894f; --g-line: #e4dccd;
+            background: var(--g-bg); color: var(--g-ink); font-family: "Manrope", Arial, sans-serif; font-weight: 300; }
+    #gate .logo { display: flex; align-items: center; gap: 14px; line-height: 1; }
+    #gate .logo-text { display: flex; flex-direction: column; text-align: left; }
+    #gate .logo-mark { color: var(--g-gold); display: flex; }
+    #gate .logo-mark svg { width: 46px; height: 46px; }
+    #gate .logo-main { font-family: "Marcellus", Georgia, serif; font-size: 1.6rem; letter-spacing: 0.26em; }
+    #gate .logo-sub { font-size: 0.66rem; letter-spacing: 0.42em; text-transform: uppercase; color: var(--g-gold); margin-top: 6px; }
+    #gate p { color: var(--g-soft); line-height: 1.7; }
+    #gate input { width: 100%; border: 0; border-bottom: 1px solid var(--g-line); background: transparent;
+                  font: inherit; color: var(--g-ink); padding: 10px 0; }
+    #gate input:focus { outline: none; border-bottom-color: var(--g-gold); }
+    #gate .btn { display: inline-block; margin-top: 2rem; padding: 15px 34px; border: 1px solid var(--g-gold);
+                 background: transparent; color: var(--g-ink); font: inherit; font-size: 0.82rem; font-weight: 400;
+                 letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }
+    #gate .btn:hover { background: var(--g-gold); color: #fff; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div id="gate">
+    <form>
+      <div class="logo"><span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span><span class="logo-text"><span class="logo-main">VITALA</span><span class="logo-sub">Blackforest</span></span></div>
+      <p>Vorschau der neuen Website. Bitte gib das Passwort ein.</p>
+      <label for="gate-pw" class="sr-only">Passwort</label>
+      <input id="gate-pw" type="password" autocomplete="off" placeholder="Passwort">
+      <button type="submit" class="btn">Ansehen</button>
+      <p class="fehler" aria-live="polite"></p>
+    </form>
+  </div>
+  <script>
+    document.querySelector('#gate form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (document.getElementById('gate-pw').value.trim().toLowerCase() === 'vitala') {
+        try { sessionStorage.setItem('vitala-test', '1'); } catch (err) {}
+        document.documentElement.classList.remove('locked');
+      } else {
+        document.querySelector('#gate .fehler').textContent = 'Das Passwort stimmt leider nicht.';
+      }
+    });
+  </script>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Hauptnavigation">
+      <a href="index.html" class="logo" aria-label="VITALA Blackforest – Startseite">
+        <span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span>
+        <span class="logo-text">
+          <span class="logo-main">VITALA</span>
+          <span class="logo-sub">Blackforest</span>
+        </span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menü</button>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu">Angebote</button>
+          <ul class="submenu" id="submenu"><li><a href="astrologie.html">Astrologie</a></li><li><a href="vitalanalyse.html">Vitalanalyse</a></li><li><a href="zellgesundheit.html">Zellgesundheit</a></li></ul></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="netzwerk.html" aria-current="page">Netzwerk</a></li>
+        <li class="menu-cta"><a href="termin.html">Termin buchen</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Netzwerk</span>
+        <h1>Mein Netzwerk</h1>
+        <p>Menschen, mit denen ich zusammenarbeite und die ich gern weiterempfehle.</p>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap partners">
+        <article class="partner">
+          <h2>Lisa Scheier</h2>
+          <span class="offer-by">Webdesign und Google Ads</span>
+          <p>Lisa hat die Website von VITALA Blackforest gestaltet.</p>
+          <a href="https://lisascheier.de" class="link-gold" target="_blank" rel="noopener">lisascheier.de</a>
+        </article>
+        <article class="partner">
+          <h2><span class="ph">[Name]</span></h2>
+          <span class="offer-by"><span class="ph">[Angebot]</span></span>
+          <p><span class="ph">[Ein Satz von Patrick, warum er sie oder ihn empfiehlt]</span></p>
+          <span class="link-gold"><span class="ph">[Link]</span></span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap narrow">
+        <div class="ornament"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.57 3.78L38.02 8.68M15.32 7.38L39.64 19.09M13.29 10.60L27.36 21.82M10.60 13.29L29.93 37.53M7.38 15.32L16.92 35.14M3.78 16.57L9.79 42.90M0.00 17.00L0.00 35.00M-3.78 16.57L-10.68 46.80M-7.38 15.32L-16.92 35.14M-10.60 13.29L-27.43 34.40M-13.29 10.60L-27.36 21.82M-15.32 7.38L-43.25 20.83M-16.57 3.78L-38.02 8.68M-17.00 0.00L-44.00 0.00M-16.57 -3.78L-34.12 -7.79M-15.32 -7.38L-43.25 -20.83M-13.29 -10.60L-30.49 -24.32M-10.60 -13.29L-27.43 -34.40M-7.38 -15.32L-15.19 -31.53M-3.78 -16.57L-10.68 -46.80M-0.00 -17.00L-0.00 -39.00M3.78 -16.57L9.79 -42.90M7.38 -15.32L15.19 -31.53M10.60 -13.29L29.93 -37.53M13.29 -10.60L30.49 -24.32M15.32 -7.38L39.64 -19.09M16.57 -3.78L34.12 -7.79" stroke-width="2.2"/><circle r="12" stroke-width="4.5"/></svg></div>
+        <h2>Noch Fragen offen?</h2>
+        <p>Melde dich gern bei mir.</p>
+        <div class="cta-buttons">
+          <a href="termin.html" class="btn">Termin buchen</a>
+        </div>
+        <p class="cta-alt"><a href="kontakt.html" class="link-gold">Lieber schreiben</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a href="index.html" class="logo logo-small">
+          <span class="logo-mark"><svg viewBox="-50 -50 100 100" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M17.00 0.00L48.00 0.00M16.89 1.90L38.75 4.37M16.57 3.78L42.90 9.79M16.05 5.61L33.04 11.56M15.32 7.38L43.25 20.83M14.39 9.04L33.02 20.75M13.29 10.60L34.40 27.43M12.02 12.02L24.75 24.75M10.60 13.29L29.93 37.53M9.04 14.39L20.75 33.02M7.38 15.32L19.09 39.64M5.61 16.05L11.56 33.04M3.78 16.57L10.68 46.80M1.90 16.89L4.37 38.75M0.00 17.00L0.00 44.00M-1.90 16.89L-3.92 34.78M-3.78 16.57L-10.68 46.80M-5.61 16.05L-12.88 36.81M-7.38 15.32L-19.09 39.64M-9.04 14.39L-18.62 29.64M-10.60 13.29L-29.93 37.53M-12.02 12.02L-27.58 27.58M-13.29 10.60L-34.40 27.43M-14.39 9.04L-29.64 18.62M-15.32 7.38L-43.25 20.83M-16.05 5.61L-36.81 12.88M-16.57 3.78L-42.90 9.79M-16.89 1.90L-34.78 3.92M-17.00 0.00L-48.00 0.00M-16.89 -1.90L-38.75 -4.37M-16.57 -3.78L-42.90 -9.79M-16.05 -5.61L-33.04 -11.56M-15.32 -7.38L-43.25 -20.83M-14.39 -9.04L-33.02 -20.75M-13.29 -10.60L-34.40 -27.43M-12.02 -12.02L-24.75 -24.75M-10.60 -13.29L-29.93 -37.53M-9.04 -14.39L-20.75 -33.02M-7.38 -15.32L-19.09 -39.64M-5.61 -16.05L-11.56 -33.04M-3.78 -16.57L-10.68 -46.80M-1.90 -16.89L-4.37 -38.75M-0.00 -17.00L-0.00 -44.00M1.90 -16.89L3.92 -34.78M3.78 -16.57L10.68 -46.80M5.61 -16.05L12.88 -36.81M7.38 -15.32L19.09 -39.64M9.04 -14.39L18.62 -29.64M10.60 -13.29L29.93 -37.53M12.02 -12.02L27.58 -27.58M13.29 -10.60L34.40 -27.43M14.39 -9.04L29.64 -18.62M15.32 -7.38L43.25 -20.83M16.05 -5.61L36.81 -12.88M16.57 -3.78L42.90 -9.79M16.89 -1.90L34.78 -3.92" stroke-width="0.9"/><circle r="12" stroke-width="2.4"/></svg></span>
+          <span class="logo-text">
+            <span class="logo-main">VITALA</span>
+            <span class="logo-sub">Blackforest</span>
+          </span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="https://www.instagram.com/vitala.blackforest/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+          </div>
+  </footer>
+
+  <script>
+    var t = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
+    t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+      t.textContent = open ? 'Schließen' : 'Menü';
+    });
+    // „Angebote“: Klick öffnet/schließt das Untermenü, Klick daneben oder Esc schließt es
+    var st = document.querySelector('.sub-toggle'), sl = st.parentNode;
+    function setSub(open) { sl.classList.toggle('open', open); st.setAttribute('aria-expanded', open); }
+    st.addEventListener('click', function () { setSub(!sl.classList.contains('open')); });
+    document.addEventListener('click', function (e) { if (!sl.contains(e.target)) setSub(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setSub(false); });
+    // nach Tippen auf einen Menüpunkt wieder schließen (wichtig für Sprünge innerhalb der Seite)
+    m.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { m.classList.remove('open'); t.setAttribute('aria-expanded', false); t.textContent = 'Menü'; }
+    });
+  </script>
+</body>
+</html>
