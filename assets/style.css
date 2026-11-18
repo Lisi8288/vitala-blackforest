@@ -22,7 +22,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -387,7 +387,8 @@ section { padding: 130px 0; }
 /* Netzwerk */
 .partners {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
+  justify-content: center;
   gap: 28px;
 }
 .partner {
@@ -399,8 +400,7 @@ section { padding: 130px 0; }
   background: var(--bg);
   text-align: center;
 }
-.partner img,
-.partner-foto-ph {
+.partner img {
   width: 150px;
   height: 150px;
   margin: 0 auto 1.2rem;
@@ -409,7 +409,6 @@ section { padding: 130px 0; }
   outline: 1px solid var(--gold-light);
   outline-offset: 6px;
 }
-.partner-foto-ph { display: grid; place-items: center; background: var(--bg-soft, #f3efe7); }
 .partner h2 { margin: 0; font-size: 1.5rem; }
 .partner p { color: var(--ink-soft); margin: 0.6rem 0 0.8rem; }
 .partner .link-gold { justify-self: center; }
@@ -698,6 +697,9 @@ section { padding: 130px 0; }
 
 /* ---------- Rechtliches ---------- */
 .legal h2 { font-size: 1.5rem; margin-top: 2.6rem; }
+.legal h3 { font-size: 1.2rem; margin-top: 2rem; }
+.legal h4 { font-family: var(--sans); font-size: 1rem; font-weight: 500; margin: 1.4rem 0 0.3rem; }
+.legal p, .legal li { overflow-wrap: anywhere; }
 /* Platzhalter, die Patrick noch ausfüllen muss – vor dem Livegang alle ersetzen */
 .ph { background: #f6e7b8; color: var(--ink); padding: 1px 4px; }
 
@@ -863,3 +865,6 @@ form textarea:focus { outline: none; border-bottom-color: var(--gold); }
   .page-head { padding: 80px 0 60px; }
   .footer-row { flex-direction: column; align-items: flex-start; }
 }
+
+/* Kräftigere Schrift, damit sie auf Bildschirmen klar wirkt */
+.menu, .sub-toggle, .submenu a, .btn, .eyebrow, .offer-by, .link-gold, .footer-links, form label { font-weight: 500; }
