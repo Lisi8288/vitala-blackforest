@@ -739,6 +739,10 @@ form textarea {
   border-radius: 0;
 }
 form textarea { min-height: 140px; resize: vertical; }
+.form-status { margin: 1.2rem 0 0; font-size: 0.95rem; }
+.form-status:empty { display: none; }
+.form-status.is-ok { color: var(--gold); }
+.form-status.is-fehler { color: #9c3d2e; }
 .geburt { border: 0; padding: 0; margin: 2.4rem 0 0; }
 .geburt legend {
   font-family: var(--serif);
@@ -779,7 +783,8 @@ form textarea:focus { outline: none; border-bottom-color: var(--gold); }
   gap: 24px;
   flex-wrap: wrap;
 }
-.footer-links { display: flex; gap: 28px; list-style: none; letter-spacing: 0.08em; }
+.footer-links {
+  flex-wrap: wrap; display: flex; gap: 28px; list-style: none; letter-spacing: 0.08em; }
 .footer-links a:hover { color: var(--gold); }
 .credit { margin-top: 26px; font-size: 0.75rem; color: #a49e92; }
 

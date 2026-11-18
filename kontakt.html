@@ -117,7 +117,8 @@
           <dd><a href="termin.html" class="link-gold">Direkt online buchen</a></dd>
         </dl>
 
-        <form action="#" method="post" id="formular">
+        <form action="https://submit-form.com/r7hlYaN0O" method="POST" id="formular">
+          <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" required autocomplete="name">
 
@@ -151,9 +152,10 @@
           <label for="nachricht">Nachricht</label>
           <textarea id="nachricht" name="nachricht" required></textarea>
 
-          <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden.</span></label>
+          <label class="check"><input type="checkbox" name="datenschutz" value="zugestimmt" required> <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden.</span></label>
 
           <button type="submit" class="btn">Nachricht senden</button>
+          <p class="form-status" id="formular-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -166,6 +168,35 @@
       auswahl.value = thema;
       document.getElementById('formular').scrollIntoView();
     }
+
+    // Formular an Formspark senden, Meldung direkt auf der Seite anzeigen
+    var formular = document.getElementById('formular');
+    var meldung = document.getElementById('formular-status');
+    var knopf = formular.querySelector('button[type="submit"]');
+    var knopfText = knopf.textContent;
+    formular.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (knopf.disabled) return;
+      knopf.disabled = true;
+      knopf.textContent = 'Wird gesendet …';
+      meldung.textContent = '';
+      meldung.classList.remove('is-ok', 'is-fehler');
+      fetch(formular.action, { method: 'POST', body: new FormData(formular), headers: { Accept: 'application/json' } })
+        .then(function (antwort) {
+          if (!antwort.ok) throw new Error('Senden fehlgeschlagen');
+          formular.reset();
+          meldung.textContent = 'Danke für deine Nachricht. Du bekommst innerhalb von zwei Werktagen eine Antwort.';
+          meldung.classList.add('is-ok');
+        })
+        .catch(function () {
+          meldung.textContent = 'Das hat leider nicht geklappt. Bitte versuch es noch einmal oder schreib direkt an kontakt@vitala-blackforest.de.';
+          meldung.classList.add('is-fehler');
+        })
+        .finally(function () {
+          knopf.disabled = false;
+          knopf.textContent = knopfText;
+        });
+    });
   </script>
 
   </main>
